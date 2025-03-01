@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/amanbh321/spe_mini_project.git'
+                git branch: 'main', url: 'https://github.com/amanbh321/spe_mini_project.git'
             }
         }
 
