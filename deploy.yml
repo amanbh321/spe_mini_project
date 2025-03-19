@@ -1,0 +1,36 @@
+---
+- name: Deploy Scientific Calculator Locally
+  hosts: localhost
+  become: true
+  tasks:
+
+    - name: Ensure Docker service is running
+      service:
+        name: docker
+        state: started
+      become: true
+
+    - name: Log in to DockerHub
+      docker_login:
+        username: "amanbh321"
+        password: "Truman#1234"
+      no_log: true  # Hides sensitive credentials
+
+    - name: Pull latest Docker image
+      docker_image:
+        name: "amanbh321/scientific-calculator:latest"
+        source: pull
+
+    - name: Stop and remove existing container
+      docker_container:
+        name: scientific-calculator
+        state: absent
+
+    - name: Run new container
+      docker_container:
+        name: scientific-calculator
+        image: "amanbh321/scientific-calculator:latest"
+        state: started
+        restart_policy: always
+        ports:
+          - "9090:8080"

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ScientificCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice = -1;
 
         do {
             System.out.println("\nScientific Calculator Menu:");
@@ -15,7 +15,14 @@ public class ScientificCalculator {
             System.out.println("4. Power Function (x^b)");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
+
+            if (scanner.hasNextInt()) { // Check if input is available
+                choice = scanner.nextInt();
+            } else {
+                System.out.println("Invalid input! Please enter a number.");
+                scanner.next(); // Consume invalid input
+                continue;
+            }
 
             switch (choice) {
                 case 1:
