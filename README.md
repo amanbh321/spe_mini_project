@@ -142,6 +142,3 @@ docker run -d -p 9090:8080 amanbh321/scientific-calculator:v3
 
 ---
 
-## License
-This project is licensed under the **MIT License**.
-
