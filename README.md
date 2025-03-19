@@ -137,7 +137,7 @@ docker run -d -p 9090:8080 amanbh321/scientific-calculator:v3
 
 ## Author
 **Aman Bahuguna**
-- GitHub: [your-github-url](https://github.com/your-amanbh321)
+- GitHub: [amanbh321](https://github.com/amanbh321)
 - DockerHub: [amanbh321](https://hub.docker.com/u/amanbh321)
 
 ---
